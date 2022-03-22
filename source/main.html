@@ -14,7 +14,8 @@
   <header class="body__header header">
     <form class="header__search-form" action="#" method="POST">
       <div class="header__search-field">
-        <input type="search" placeholder="Type here to search">
+        <label class="visually-hidden" for="header-search-input">Search field</label>
+        <input type="search" id="header-search-input" placeholder="Type here to search">
       </div>
     </form>
     <a class="header__link header__link--login link" href="#">Login</a>
@@ -248,7 +249,7 @@
         <div class="faq__section-title section-title">
           <h2>Frequently asked questions</h2>
         </div>
-        <ul class="faq__list">
+        <ul class="faq__list list">
           <li class="faq__question">
             <h3>What materials are the jewellery made of?</h3>
             <p>Our jewellerry is made of solid gold, silver or leather. Also, some jewellery contains precious and
@@ -277,9 +278,9 @@
           <h2>@Chjewellery</h2>
           <a class="gallery__follow-link link" href="#">Follow us</a>
         </div>
-        <ul class="gallery__list">
+        <ul class="gallery__list list">
           <li class="gallery__item">
-            <a class="gallery__item-link" href="#">
+            <a class="gallery__item-link link" href="#">
               <!-- 1x: 230px: 2x: 460px -->
               <picture class="gallery__item-picture">
                 <!-- <source type="image/webp" media="(max-width: 767px)"
@@ -299,12 +300,192 @@
               </picture>
             </a>
           </li>
+          <li class="gallery__item">
+            <a class="gallery__item-link link" href="#">
+              <!-- 1x: 230px: 2x: 460px -->
+              <picture class="gallery__item-picture">
+                <!-- <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/content/gallery/mobile/2@1x.webp 1x, img/content/gallery/mobile/2@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/content/gallery/tablet/2@1x.webp 1x, img/content/gallery/tablet/2@2x.webp 2x">
+              <source type="image/webp"
+                srcset="img/content/gallery/desktop/2@1x.webp 1x, img/content/gallery/desktop/2@2x.webp 2x"> -->
+
+                <source media="(max-width: 767px)"
+                  srcset="img/content/gallery/mobile/2@1x.png 1x, img/content/gallery/mobile/2@2x.png 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/content/gallery/tablet/2@1x.png 1x, img/content/gallery/tablet/2@2x.png 2x">
+                <img src="img/content/gallery/desktop/2@1x.png"
+                  srcset="img/content/gallery/desktop/2@2x.png 2x" alt="We on social media"
+                  width="230" height="230" loading="lazy">
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__item-link link" href="#">
+              <!-- 1x: 230px: 2x: 460px -->
+              <picture class="gallery__item-picture">
+                <!-- <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/content/gallery/mobile/3@1x.webp 1x, img/content/gallery/mobile/3@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/content/gallery/tablet/3@1x.webp 1x, img/content/gallery/tablet/3@2x.webp 2x">
+              <source type="image/webp"
+                srcset="img/content/gallery/desktop/3@1x.webp 1x, img/content/gallery/desktop/3@2x.webp 2x"> -->
+
+                <source media="(max-width: 767px)"
+                  srcset="img/content/gallery/mobile/3@1x.png 1x, img/content/gallery/mobile/3@2x.png 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/content/gallery/tablet/3@1x.png 1x, img/content/gallery/tablet/3@2x.png 2x">
+                <img src="img/content/gallery/desktop/3@1x.png"
+                  srcset="img/content/gallery/desktop/3@2x.png 2x" alt="We on social media"
+                  width="230" height="230" loading="lazy">
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__item-link link" href="#">
+              <!-- 1x: 230px: 2x: 460px -->
+              <picture class="gallery__item-picture">
+                <!-- <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/content/gallery/mobile/4@1x.webp 1x, img/content/gallery/mobile/4@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/content/gallery/tablet/4@1x.webp 1x, img/content/gallery/tablet/4@2x.webp 2x">
+              <source type="image/webp"
+                srcset="img/content/gallery/desktop/4@1x.webp 1x, img/content/gallery/desktop/4@2x.webp 2x"> -->
+
+                <source media="(max-width: 767px)"
+                  srcset="img/content/gallery/mobile/4@1x.png 1x, img/content/gallery/mobile/4@2x.png 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/content/gallery/tablet/4@1x.png 1x, img/content/gallery/tablet/4@2x.png 2x">
+                <img src="img/content/gallery/desktop/4@1x.png"
+                  srcset="img/content/gallery/desktop/4@2x.png 2x" alt="We on social media"
+                  width="230" height="230" loading="lazy">
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__item-link link" href="#">
+              <!-- 1x: 230px: 2x: 460px -->
+              <picture class="gallery__item-picture">
+                <!-- <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/content/gallery/mobile/5@1x.webp 1x, img/content/gallery/mobile/5@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/content/gallery/tablet/5@1x.webp 1x, img/content/gallery/tablet/5@2x.webp 2x">
+              <source type="image/webp"
+                srcset="img/content/gallery/desktop/5@1x.webp 1x, img/content/gallery/desktop/5@2x.webp 2x"> -->
+
+                <source media="(max-width: 767px)"
+                  srcset="img/content/gallery/mobile/5@1x.png 1x, img/content/gallery/mobile/5@2x.png 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/content/gallery/tablet/5@1x.png 1x, img/content/gallery/tablet/5@2x.png 2x">
+                <img src="img/content/gallery/desktop/5@1x.png"
+                  srcset="img/content/gallery/desktop/5@2x.png 2x" alt="We on social media"
+                  width="230" height="230" loading="lazy">
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__item-link link" href="#">
+              <!-- 1x: 230px: 2x: 460px -->
+              <picture class="gallery__item-picture">
+                <!-- <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/content/gallery/mobile/6@1x.webp 1x, img/content/gallery/mobile/6@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/content/gallery/tablet/6@1x.webp 1x, img/content/gallery/tablet/6@2x.webp 2x">
+              <source type="image/webp"
+                srcset="img/content/gallery/desktop/6@1x.webp 1x, img/content/gallery/desktop/6@2x.webp 2x"> -->
+
+                <source media="(max-width: 767px)"
+                  srcset="img/content/gallery/mobile/6@1x.png 1x, img/content/gallery/mobile/6@2x.png 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/content/gallery/tablet/6@1x.png 1x, img/content/gallery/tablet/6@2x.png 2x">
+                <img src="img/content/gallery/desktop/6@1x.png"
+                  srcset="img/content/gallery/desktop/6@2x.png 2x" alt="We on social media"
+                  width="230" height="230" loading="lazy">
+              </picture>
+            </a>
+          </li>
+          <li class="gallery__item">
+            <a class="gallery__item-link link" href="#">
+              <!-- 1x: 230px: 2x: 460px -->
+              <picture class="gallery__item-picture">
+                <!-- <source type="image/webp" media="(max-width: 767px)"
+                srcset="img/content/gallery/mobile/7@1x.webp 1x, img/content/gallery/mobile/7@2x.webp 2x">
+              <source type="image/webp" media="(max-width: 1023px)"
+                srcset="img/content/gallery/tablet/7@1x.webp 1x, img/content/gallery/tablet/7@2x.webp 2x">
+              <source type="image/webp"
+                srcset="img/content/gallery/desktop/7@1x.webp 1x, img/content/gallery/desktop/7@2x.webp 2x"> -->
+
+                <source media="(max-width: 767px)"
+                  srcset="img/content/gallery/mobile/7@1x.png 1x, img/content/gallery/mobile/7@2x.png 2x">
+                <source media="(max-width: 1023px)"
+                  srcset="img/content/gallery/tablet/7@1x.png 1x, img/content/gallery/tablet/7@2x.png 2x">
+                <img src="img/content/gallery/desktop/7@1x.png"
+                  srcset="img/content/gallery/desktop/7@2x.png 2x" alt="We on social media"
+                  width="230" height="230" loading="lazy">
+              </picture>
+            </a>
+          </li>
         </ul>
       </section>
     </div>
   </main>
 
-  <footer></footer>
+  <footer class="main__footer footer">
+    <div class="footer__sign-up">
+      <h3>The good stuff in your inbox</h3>
+      <span>News and updates from CH. No spam, we promise.</span>
+      <form class="footer__sign-up-form" action="#" method="POST">
+        <div class="footer__sign-up-field">
+          <label class="visually-hidden" for="footer-email-input">Enter your e-mail to sign-up</label>
+          <input type="email" name="sign-up-email" id="footer-email-input" placeholder="Your E-mail">
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+    <ul class="footer__info-list footer__info-list--for-buyers list">
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Ordering & Payment</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Terms & Conditions</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Returns & Exchanges</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Delivery</a>
+      </li>
+    </ul>
+    <ul class="footer__info-list footer__info-list--about-us list">
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">About CH</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Stores & Hours</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Jobs</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="footer__info-list footer__info-list--socials list">
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Facebook</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Instagram</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Pinterest</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Twitter</a>
+      </li>
+    </ul>
+  </footer>
 </body>
 
 <script type="module" src="js/main.js"></script>
