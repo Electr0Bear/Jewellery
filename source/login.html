@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jewellery</title>
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/poppins-medium.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+</head>
+
+<body class="body">
+  <header class="body__header header">
+    <form class="header__search-form" action="#" method="POST">
+      <div class="header__search-field">
+        <label class="visually-hidden" for="header-search-input">Search field</label>
+        <input type="search" id="header-search-input" placeholder="Type here to search">
+      </div>
+    </form>
+    <a class="header__link header__link--login link" href="#">Login</a>
+    <a class="header__link header__link--cart link" href="#">
+      Cart
+      <input type="number" value="0" disabled>
+    </a>
+    <nav class="header__nav">
+      <ul class="header__nav-list list">
+        <li class="header__nav-item">
+          <a class="header__nav-link link" href="#">What’s new</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link link" href="#">Chokers</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link link" href="#">Necklaces</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link link" href="#">Rings</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link link" href="#">Earrings</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="body__main main">
+    <div class="main__login login">
+      <form class="login__form" action="#" method="POST">
+        <h2>Log In</h2>
+        <div class="login__email-field">
+          <label class="visually-hidden" for="login-email">Enter your e-mail</label>
+          <input type="email" name="login-email" id="login-email" placeholder="Your E-mail">
+        </div>
+       <div class="login__password-field">
+         <label class="visually-hidden" for="login-password">Enter your password</label>
+        <input type="password" name="login-password" id="login-password" placeholder="Password">
+       </div>
+       <a class="login__forgot-pass-button link" href="#">Forgot your password?</a>
+       <button class="login__submit-button button" type="submit">Log In</button>
+      </form>
+      <span>
+        Don’t have an account?
+        <a class="login__signup-link link" href="#">Sign up</a>
+      </span>
+    </div>
+  </main>
+
+  <footer class="main__footer footer">
+    <div class="footer__sign-up">
+      <h3>The good stuff in your inbox</h3>
+      <span>News and updates from CH. No spam, we promise.</span>
+      <form class="footer__sign-up-form" action="#" method="POST">
+        <div class="footer__sign-up-field">
+          <label class="visually-hidden" for="footer-email-input">Enter your e-mail to sign-up</label>
+          <input type="email" name="sign-up-email" id="footer-email-input" placeholder="Your E-mail">
+        </div>
+        <button type="submit">Sign up</button>
+      </form>
+    </div>
+    <ul class="footer__info-list footer__info-list--for-buyers list">
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Ordering & Payment</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Terms & Conditions</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Returns & Exchanges</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Delivery</a>
+      </li>
+    </ul>
+    <ul class="footer__info-list footer__info-list--about-us list">
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">About CH</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Stores & Hours</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Jobs</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Contact Us</a>
+      </li>
+    </ul>
+    <ul class="footer__info-list footer__info-list--socials list">
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Facebook</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Instagram</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Pinterest</a>
+      </li>
+      <li class="footer__info-item">
+        <a class="footer__info-link link" href="#">Twitter</a>
+      </li>
+    </ul>
+  </footer>
+</body>
+
+<script type="module" src="js/main.js"></script>
+
+</html>
