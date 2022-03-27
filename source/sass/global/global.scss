@@ -19,7 +19,20 @@ html {
 
 .container {
   margin: 0 auto;
+  padding-left: 98px;
+  padding-right: 98px;
+  width: 100%;
   max-width: $desktopMax;
+
+  @media (max-width: $tabletMax) {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  @media (max-width: $mobileMax) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .visually-hidden {
