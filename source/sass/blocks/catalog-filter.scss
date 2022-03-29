@@ -1,0 +1,145 @@
+.catalog-filter__form {
+  display: block;
+
+  @media (max-width: $tabletMax) {
+    display: none;
+  }
+}
+
+.catalog-filter__filter-wrapper {
+  margin-bottom: 35px;
+  border: 1px solid $basicBrown;
+}
+
+.catalog-filter__section {
+  padding: 28px 25px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $basicBrown;
+  }
+}
+
+.catalog-filter__section--closed {
+  & .catalog-filter__filter-list {
+    display: none;
+  }
+
+  & .catalog-filter__section-title svg {
+    transform: rotate(180deg);
+  }
+}
+
+.catalog-filter__filter-list {
+  margin-top: 30px;
+}
+
+.catalog-filter__section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.catalog-filter__section-title h5 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.catalog-filter__filter-label {
+  padding-left: 35px;
+  position: relative;
+  font-size: 14px;
+  line-height: 18px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $basicBrown;
+  }
+}
+
+.catalog-filter__filter-item
+  input:checked
+  + .catalog-filter__filter-label::before {
+  background-color: $basicBrown;
+}
+
+.catalog-filter__price-range {
+  margin-bottom: 17px;
+  padding-left: 45px;
+  padding-right: 35px;
+  width: 100%;
+  height: 1px;
+  background-color: $cream;
+}
+
+.catalog-filter__selected-price-range {
+  position: relative;
+  height: 1px;
+  background-color: $basicBrown;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: $basicBrown;
+    border-radius: 50%;
+  }
+
+  &::after {
+    left: auto;
+    right: 0;
+  }
+}
+
+.catalog-filter__filter-price {
+  font-size: 14px;
+  line-height: 18px;
+
+  &--low {
+    margin-left: 37px;
+  }
+
+  &--high {
+    margin-left: 70px;
+  }
+}
+
+.catalog-filter__button {
+  margin-bottom: 25px;
+  padding: 22px 0;
+  width: 100%;
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  background: none;
+  border: 1px solid $basicBrown;
+  outline: none;
+  cursor: pointer;
+
+  &--apply,
+  &--show-filter {
+    color: $white;
+    background-color: $basicBrown;
+  }
+
+  &--show-filter {
+    display: none;
+
+    @media (max-width: $tabletMax) {
+      display: block;
+    }
+  }
+}

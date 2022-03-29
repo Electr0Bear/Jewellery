@@ -17,6 +17,10 @@ html {
   box-sizing: border-box;
 }
 
+.body__main {
+  position: inherit;
+}
+
 .container {
   margin: 0 auto;
   padding-left: 98px;

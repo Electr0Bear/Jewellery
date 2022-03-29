@@ -87,43 +87,100 @@
       <div class="page-body__catalog-wrapper">
         <section class="page-body__catalog-filter catalog-filter">
           <h2 class="visually-hidden">Product filter</h2>
+          <button class="catalog-filter__button catalog-filter__button--show-filter" type="button">Filter</button>
           <form class="catalog-filter__form" action="#" method="POST">
-            <div class="catalog-filter__product">
-              <h5>Products</h5>
-              <input type="checkbox" name="catalog-filter-product" id="catalog-filter-product-necklaces" value="necklaces">
-              <label for="catalog-filter-product-necklaces">Necklaces</label>
-              <input type="checkbox" name="catalog-filter-product" id="catalog-filter-product-chockers" value="chockers">
-              <label for="catalog-filter-product-chockers">Chokers</label>
-              <input type="checkbox" name="catalog-filter-product" id="catalog-filter-product-rings" value="rings">
-              <label for="catalog-filter-product-rings">Rings</label>
-              <input type="checkbox" name="catalog-filter-product" id="catalog-filter-product-earrings" value="earrings">
-              <label for="catalog-filter-product-earrings">Earrings</label>
+            <div class="catalog-filter__filter-wrapper">
+              <div class="catalog-filter__section catalog-filter__section--product">
+                <div class="catalog-filter__section-title">
+                  <h5>Products</h5>
+                  <svg width="15" height="8">
+                    <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-small"></use>
+                  </svg>
+                </div>
+                <ul class="catalog-filter__filter-list list">
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-necklaces"
+                      value="necklaces" checked>
+                    <label class="catalog-filter__filter-label" for="catalog-filter-product-necklaces">Necklaces</label>
+                  </li>
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-chockers"
+                      value="chockers" checked>
+                    <label class="catalog-filter__filter-label" for="catalog-filter-product-chockers">Chokers</label>
+                  </li>
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-rings" value="rings">
+                    <label class="catalog-filter__filter-label" for="catalog-filter-product-rings">Rings</label>
+                  </li>
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-earrings"
+                      value="earrings" checked>
+                    <label class="catalog-filter__filter-label" for="catalog-filter-product-earrings">Earrings</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="catalog-filter__section catalog-filter__section--closed catalog-filter__section--material">
+                <div class="catalog-filter__section-title">
+                  <h5>Material</h5>
+                  <svg width="15" height="8">
+                    <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-small"></use>
+                  </svg>
+                </div>
+                <ul class="catalog-filter__filter-list list">
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-material" id="catalog-filter-material-gold" value="gold" checked>
+                    <label class="catalog-filter__filter-label" for="catalog-filter-material-gold">Gold</label>
+                  </li>
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-material" id="catalog-filter-material-silver"
+                      value="silver">
+                    <label class="catalog-filter__filter-label" for="catalog-filter-material-silver">Silver</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="catalog-filter__section catalog-filter__section--closed catalog-filter__section--collection">
+                <div class="catalog-filter__section-title">
+                  <h5>Collection</h5>
+                  <svg width="15" height="8">
+                    <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-small"></use>
+                  </svg>
+                </div>
+                <ul class="catalog-filter__filter-list list">
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-collection" id="catalog-filter-collection-pink-flamingo"
+                      value="pink-flamingo">
+                    <label class="catalog-filter__filter-label" for="catalog-filter-collection-pink-flamingo">Pink flamingo</label>
+                  </li>
+                  <li class="catalog-filter__filter-item">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-collection" id="catalog-filter-collection-dreams"
+                      value="dreams" checked>
+                    <label class="catalog-filter__filter-label" for="catalog-filter-collection-dreams">Dreams</label>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="catalog-filter__section catalog-filter__section--price">
+                <div class="catalog-filter__section-title">
+                  <h5>Price</h5>
+                  <svg width="15" height="8">
+                    <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-small"></use>
+                  </svg>
+                </div>
+                <div class="catalog-filter__filter-list catalog-filter__filter-price-range">
+                  <div class="catalog-filter__price-range">
+                    <div class="catalog-filter__selected-price-range">
+                    </div>
+                  </div>
+                  <span class="catalog-filter__filter-price catalog-filter__filter-price--low">$ 55</span>
+                  <span class="catalog-filter__filter-price catalog-filter__filter-price--high">$ 155</span>
+                </div>
+              </div>
             </div>
 
-            <div class="catalog-filter__material">
-              <h5>Material</h5>
-              <input type="checkbox" name="catalog-filter-material" id="catalog-filter-material-gold" value="gold">
-              <label for="catalog-filter-material-gold">Gold</label>
-              <input type="checkbox" name="catalog-filter-material" id="catalog-filter-material-silver" value="silver">
-              <label for="catalog-filter-material-silver">Silver</label>
-            </div>
-
-            <div class="catalog-filter__collection">
-              <h5>Collection</h5>
-              <input type="checkbox" name="catalog-filter-collection" id="catalog-filter-collection-pink-flamingo" value="pink-flamingo">
-              <label for="catalog-filter-collection-pink-flamingo">Pink flamingo</label>
-              <input type="checkbox" name="catalog-filter-collection" id="catalog-filter-collection-dreams" value="dreams">
-              <label for="catalog-filter-collection-dreams">Dreams</label>
-            </div>
-
-            <div class="catalog-filter__price">
-              <h5>Price</h5>
-              <span>$ 55</span>
-              <span>$ 155</span>
-            </div>
-
-            <button type="submit">Apply</button>
-            <button type="button">Clear All</button>
+            <button class="catalog-filter__button catalog-filter__button--apply" type="submit">Apply</button>
+            <button class="catalog-filter__button catalog-filter__button--clear" type="button">Clear All</button>
           </form>
         </section>
 
@@ -237,8 +294,8 @@
                   <source media="(max-width: 1023px)"
                     srcset="img/content/goods/tablet/boho-earrings@1x.png 1x, img/content/goods/tablet/boho-earrings@2x.png 2x">
                   <img src="img/content/goods/desktop/boho-earrings@1x.png"
-                    srcset="img/content/goods/desktop/boho-earrings@2x.png 2x" alt="Boho earrings"
-                    width="270" height="272" loading="lazy">
+                    srcset="img/content/goods/desktop/boho-earrings@2x.png 2x" alt="Boho earrings" width="270"
+                    height="272" loading="lazy">
                 </picture>
                 <h5>Boho earrings</h5>
                 <span>$ 75</span>
@@ -260,8 +317,8 @@
                   <source media="(max-width: 1023px)"
                     srcset="img/content/goods/tablet/bird-necklace@1x.png 1x, img/content/goods/tablet/bird-necklace@2x.png 2x">
                   <img src="img/content/goods/desktop/bird-necklace@1x.png"
-                    srcset="img/content/goods/desktop/bird-necklace@2x.png 2x" alt="Gold bird necklace"
-                    width="270" height="272" loading="lazy">
+                    srcset="img/content/goods/desktop/bird-necklace@2x.png 2x" alt="Gold bird necklace" width="270"
+                    height="272" loading="lazy">
                 </picture>
                 <h5>Gold bird necklace</h5>
                 <span>$ 135</span>
@@ -283,8 +340,8 @@
                   <source media="(max-width: 1023px)"
                     srcset="img/content/goods/tablet/black-leather-choker-necklace@1x.png 1x, img/content/goods/tablet/black-leather-choker-necklace@2x.png 2x">
                   <img src="img/content/goods/desktop/black-leather-choker-necklace@1x.png"
-                    srcset="img/content/goods/desktop/black-leather-choker-necklace@2x.png 2x" alt="Black leather choker"
-                    width="270" height="272" loading="lazy">
+                    srcset="img/content/goods/desktop/black-leather-choker-necklace@2x.png 2x"
+                    alt="Black leather choker" width="270" height="272" loading="lazy">
                 </picture>
                 <h5>Black leather choker</h5>
                 <span>$ 85</span>
@@ -329,8 +386,8 @@
                   <source media="(max-width: 1023px)"
                     srcset="img/content/goods/tablet/elephant-earrings@1x.png 1x, img/content/goods/tablet/elephant-earrings@2x.png 2x">
                   <img src="img/content/goods/desktop/elephant-earrings@1x.png"
-                    srcset="img/content/goods/desktop/elephant-earrings@2x.png 2x" alt="Elephant earrings"
-                    width="270" height="272" loading="lazy">
+                    srcset="img/content/goods/desktop/elephant-earrings@2x.png 2x" alt="Elephant earrings" width="270"
+                    height="272" loading="lazy">
                 </picture>
                 <h5>Elephant earrings</h5>
                 <span>$ 95</span>
@@ -352,8 +409,8 @@
                   <source media="(max-width: 1023px)"
                     srcset="img/content/goods/tablet/threader-necklace@1x.png 1x, img/content/goods/tablet/threader-necklace@2x.png 2x">
                   <img src="img/content/goods/desktop/threader-necklace@1x.png"
-                    srcset="img/content/goods/desktop/threader-necklace@2x.png 2x" alt="Threader necklace"
-                    width="270" height="272" loading="lazy">
+                    srcset="img/content/goods/desktop/threader-necklace@2x.png 2x" alt="Threader necklace" width="270"
+                    height="272" loading="lazy">
                 </picture>
                 <h5>Threader necklace</h5>
                 <span>$ 115</span>
@@ -398,8 +455,8 @@
                   <source media="(max-width: 1023px)"
                     srcset="img/content/goods/tablet/marble-earrings@1x.png 1x, img/content/goods/tablet/marble-earrings@2x.png 2x">
                   <img src="img/content/goods/desktop/marble-earrings@1x.png"
-                    srcset="img/content/goods/desktop/marble-earrings@2x.png 2x" alt="Marble earrings"
-                    width="270" height="272" loading="lazy">
+                    srcset="img/content/goods/desktop/marble-earrings@2x.png 2x" alt="Marble earrings" width="270"
+                    height="272" loading="lazy">
                 </picture>
                 <h5>Marble earrings</h5>
                 <span>$ 95</span>
@@ -407,25 +464,27 @@
             </li>
           </ul>
           <nav class="catalog-goods__nav-panel">
-            <a class="catalog-goods__nav-previous-page-link link" href="#">Previous</a>
-            <ul class="catalog-goods__nav-pages list">
-              <li class="catalog-goods__nav-page">
-                <a class="catalog-goods__nav-page-link link" href="#">1</a>
-              </li>
-              <li class="catalog-goods__nav-page">
-                <a class="catalog-goods__nav-page-link link" href="#">2</a>
-              </li>
-              <li class="catalog-goods__nav-page">
-                <a class="catalog-goods__nav-page-link link" href="#">3</a>
-              </li>
-              <li class="catalog-goods__nav-page">
-                <a class="catalog-goods__nav-page-link link" href="#">4</a>
-              </li>
-              <li class="catalog-goods__nav-page">
-                <a class="catalog-goods__nav-page-link link" href="#">5</a>
-              </li>
-            </ul>
-            <a class="catalog-goods__nav-next-page-link link" href="#">Next</a>
+            <div class="catalog-goods__nav-wrapper">
+              <a class="catalog-goods__nav-previous-page-link link" href="#">Previous</a>
+              <ul class="catalog-goods__nav-pages list">
+                <li class="catalog-goods__nav-page">
+                  <a class="catalog-goods__nav-page-link catalog-goods__nav-page-link--current link" href="#">1</a>
+                </li>
+                <li class="catalog-goods__nav-page">
+                  <a class="catalog-goods__nav-page-link link" href="#">2</a>
+                </li>
+                <li class="catalog-goods__nav-page">
+                  <a class="catalog-goods__nav-page-link link" href="#">3</a>
+                </li>
+                <li class="catalog-goods__nav-page">
+                  <a class="catalog-goods__nav-page-link link" href="#">4</a>
+                </li>
+                <li class="catalog-goods__nav-page">
+                  <a class="catalog-goods__nav-page-link link" href="#">5</a>
+                </li>
+              </ul>
+              <a class="catalog-goods__nav-next-page-link link" href="#">Next</a>
+            </div>
           </nav>
         </section>
       </div>
