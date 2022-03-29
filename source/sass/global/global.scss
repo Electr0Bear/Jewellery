@@ -72,3 +72,18 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+.button {
+  margin-bottom: 25px;
+  padding: 22px 0;
+  width: 100%;
+  font-family: $poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: $white;
+  background-color: $basicBrown;
+  border: 1px solid $basicBrown;
+  outline: none;
+  cursor: pointer;
+}

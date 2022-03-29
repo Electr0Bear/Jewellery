@@ -72,3 +72,56 @@
     line-height: 44px;
   }
 }
+
+.page-header--catalog {
+  background-image: url("../img/background/desktop/catalog-page-header@1x.png");
+  background-size: cover;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/desktop/catalog-page-header@2x.png");
+  }
+
+  @media (max-width: $tabletMax) {
+    background-image: url("../img/background/tablet/catalog-page-header@1x.png");
+  }
+
+  @media (max-width: $tabletMax) and (min-resolution: 144dpi), (max-width: $tabletMax) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/tablet/catalog-page-header@2x.png");
+  }
+
+  @media (max-width: $mobileMax) {
+    background-image: url("../img/background/mobile/catalog-page-header@1x.png");
+  }
+
+  @media (max-width: $mobileMax) and (min-resolution: 144dpi), (max-width: $mobileMax) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/mobile/catalog-page-header@2x.png");
+  }
+}
+
+.page-header--catalog .page-header__wrapper {
+  padding: 102px 0;
+
+  @media (max-width: $mobileMax) {
+    padding: 89px 0;
+  }
+}
+
+.page-header--catalog h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: 0.03em;
+}
+
+.page-header--catalog h4 {
+  padding: 0 36px;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+
+  @media (max-width: $mobileMax) {
+    line-height: 26px;
+  }
+}

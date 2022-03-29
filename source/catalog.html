@@ -78,16 +78,20 @@
 
   <main class="body__main main">
 
+
     <div class="main__page-header page-header page-header--catalog">
-      <h2>All jewellery</h2>
-      <h4>Discover picks of fashion's finest trends in our jewellery catalog</h4>
+      <div class="page-header__wrapper">
+        <h2>ALL JEWELLERY</h2>
+        <h4>Discover picks of fashion's finest trends in our jewellery catalog</h4>
+      </div>
     </div>
 
     <div class="main__page-body page-body container">
-      <div class="page-body__catalog-wrapper">
+      <div class="page-body__wrapper--catalog">
         <section class="page-body__catalog-filter catalog-filter">
           <h2 class="visually-hidden">Product filter</h2>
-          <button class="catalog-filter__button catalog-filter__button--show-filter" type="button">Filter</button>
+          <button class="catalog-filter__button catalog-filter__button--show-filter button"
+            type="button">Filter</button>
           <form class="catalog-filter__form" action="#" method="POST">
             <div class="catalog-filter__filter-wrapper">
               <div class="catalog-filter__section catalog-filter__section--product">
@@ -99,22 +103,23 @@
                 </div>
                 <ul class="catalog-filter__filter-list list">
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-necklaces"
-                      value="necklaces" checked>
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product"
+                      id="catalog-filter-product-necklaces" value="necklaces" checked>
                     <label class="catalog-filter__filter-label" for="catalog-filter-product-necklaces">Necklaces</label>
                   </li>
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-chockers"
-                      value="chockers" checked>
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product"
+                      id="catalog-filter-product-chockers" value="chockers" checked>
                     <label class="catalog-filter__filter-label" for="catalog-filter-product-chockers">Chokers</label>
                   </li>
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-rings" value="rings">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product"
+                      id="catalog-filter-product-rings" value="rings">
                     <label class="catalog-filter__filter-label" for="catalog-filter-product-rings">Rings</label>
                   </li>
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product" id="catalog-filter-product-earrings"
-                      value="earrings" checked>
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-product"
+                      id="catalog-filter-product-earrings" value="earrings" checked>
                     <label class="catalog-filter__filter-label" for="catalog-filter-product-earrings">Earrings</label>
                   </li>
                 </ul>
@@ -129,12 +134,13 @@
                 </div>
                 <ul class="catalog-filter__filter-list list">
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-material" id="catalog-filter-material-gold" value="gold" checked>
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-material"
+                      id="catalog-filter-material-gold" value="gold" checked>
                     <label class="catalog-filter__filter-label" for="catalog-filter-material-gold">Gold</label>
                   </li>
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-material" id="catalog-filter-material-silver"
-                      value="silver">
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-material"
+                      id="catalog-filter-material-silver" value="silver">
                     <label class="catalog-filter__filter-label" for="catalog-filter-material-silver">Silver</label>
                   </li>
                 </ul>
@@ -149,13 +155,14 @@
                 </div>
                 <ul class="catalog-filter__filter-list list">
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-collection" id="catalog-filter-collection-pink-flamingo"
-                      value="pink-flamingo">
-                    <label class="catalog-filter__filter-label" for="catalog-filter-collection-pink-flamingo">Pink flamingo</label>
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-collection"
+                      id="catalog-filter-collection-pink-flamingo" value="pink-flamingo">
+                    <label class="catalog-filter__filter-label" for="catalog-filter-collection-pink-flamingo">Pink
+                      flamingo</label>
                   </li>
                   <li class="catalog-filter__filter-item">
-                    <input class="visually-hidden" type="checkbox" name="catalog-filter-collection" id="catalog-filter-collection-dreams"
-                      value="dreams" checked>
+                    <input class="visually-hidden" type="checkbox" name="catalog-filter-collection"
+                      id="catalog-filter-collection-dreams" value="dreams" checked>
                     <label class="catalog-filter__filter-label" for="catalog-filter-collection-dreams">Dreams</label>
                   </li>
                 </ul>
@@ -179,8 +186,8 @@
               </div>
             </div>
 
-            <button class="catalog-filter__button catalog-filter__button--apply" type="submit">Apply</button>
-            <button class="catalog-filter__button catalog-filter__button--clear" type="button">Clear All</button>
+            <button class="catalog-filter__button catalog-filter__button--apply button" type="submit">Apply</button>
+            <button class="catalog-filter__button catalog-filter__button--clear button" type="button">Clear All</button>
           </form>
         </section>
 

@@ -1,10 +1,30 @@
-.page-body__catalog-wrapper {
+.page-body__wrapper--main {
+  padding-bottom: 132px;
+
+  @media (max-width: $tabletMax) {
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: $mobileMax) {
+    padding-bottom: 71px;
+  }
+}
+
+.page-body__wrapper--catalog {
+  padding-top: 80px;
+  padding-bottom: 80px;
   display: grid;
   grid-template-columns: 250px 1fr;
   gap: 50px;
 
   @media (max-width: $tabletMax) {
+    padding-top: 50px;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+  }
+
+  @media (max-width: $mobileMax) {
+    padding-top: 40px;
+    padding-bottom: 132px;
   }
 }

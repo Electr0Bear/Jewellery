@@ -117,22 +117,10 @@
 }
 
 .catalog-filter__button {
-  margin-bottom: 25px;
-  padding: 22px 0;
-  width: 100%;
-  font-family: $poppins;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  background: none;
-  border: 1px solid $basicBrown;
-  outline: none;
-  cursor: pointer;
 
-  &--apply,
-  &--show-filter {
-    color: $white;
-    background-color: $basicBrown;
+  &--clear {
+    color: $basicDark;
+    background-color: $white;
   }
 
   &--show-filter {

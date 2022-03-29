@@ -12,35 +12,67 @@
 
 <body class="body">
   <header class="body__header header">
-    <form class="header__search-form" action="#" method="POST">
-      <div class="header__search-field">
-        <label class="visually-hidden" for="header-search-input">Search field</label>
-        <input type="search" id="header-search-input" placeholder="Type here to search">
+    <div class="header__top container">
+      <a class="header__menu-button" href="#">
+        <svg width="25" height="16">
+          <use xlink:href="img/icons/sprite_auto.svg#icon-burger-menu"></use>
+        </svg>
+        <span class="visually-hidden">Site navigation</span>
+      </a>
+      <form class="header__search-form" action="#" method="POST">
+        <div class="header__search-field">
+          <svg width="14" height="14">
+            <use xlink:href="img/icons/sprite_auto.svg#icon-lens"></use>
+          </svg>
+          <label class="visually-hidden" for="header-search-input">Search field</label>
+          <input type="search" id="header-search-input" placeholder="Type here to search">
+        </div>
+      </form>
+      <div class="header__user-links">
+        <a class="header__link header__login-link link" href="#">Login</a>
+        <a class="header__link header__cart-link link" href="#">
+          <svg width="18" height="16">
+            <use xlink:href="img/icons/sprite_auto.svg#icon-shopping-bag"></use>
+          </svg>
+          <span>Cart</span>
+          <span>0</span>
+        </a>
       </div>
-    </form>
-    <a class="header__link header__link--login link" href="#">Login</a>
-    <a class="header__link header__link--cart link" href="#">
-      Cart
-      <input type="number" value="0" disabled="">
-    </a>
-    <nav class="header__nav">
-      <ul class="header__nav-list list">
-        <li class="header__nav-item">
-          <a class="header__nav-link link" href="#">What’s new</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link link" href="#">Chokers</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link link" href="#">Necklaces</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link link" href="#">Rings</a>
-        </li>
-        <li class="header__nav-item">
-          <a class="header__nav-link link" href="#">Earrings</a>
-        </li>
-      </ul>
+    </div>
+    <nav class="header__bottom-nav">
+      <div class="header__bottom-nav-wrapper">
+        <ul class="header__nav-list container">
+          <li class="header__nav-item">
+            <a class="header__nav-link link" href="#">What’s new</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link link" href="#">Chokers</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link link" href="#">Necklaces</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link link" href="#">Rings</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link link" href="#">Earrings</a>
+          </li>
+        </ul>
+        <ul class="header__nav-list-extra container">
+          <li class="header__nav-item-extra">
+            <a class="header__nav-link-extra link" href="#">About CH</a>
+          </li>
+          <li class="header__nav-item-extra">
+            <a class="header__nav-link-extra link" href="#">Stores & Hours</a>
+          </li>
+          <li class="header__nav-item-extra">
+            <a class="header__nav-link-extra link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <div class="header__login-bottom container">
+          <a class="header__login-bottom-link link" href="login.html">Login</a>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -67,59 +99,86 @@
   </main>
 
   <footer class="main__footer footer">
-    <div class="footer__sign-up">
-      <h3>The good stuff in your inbox</h3>
-      <span>News and updates from CH. No spam, we promise.</span>
-      <form class="footer__sign-up-form" action="#" method="POST">
-        <div class="footer__sign-up-field">
-          <label class="visually-hidden" for="footer-email-input">Enter your e-mail to sign-up</label>
-          <input type="email" name="sign-up-email" id="footer-email-input" placeholder="Your E-mail">
-        </div>
-        <button type="submit">Sign up</button>
-      </form>
+    <div class="footer__wrapper container">
+      <div class="footer__sign-up">
+        <h3>The good stuff in your inbox</h3>
+        <p>News and updates from CH. No spam, we promise.</p>
+        <form class="footer__sign-up-form" action="#" method="POST">
+          <div class="footer__sign-up-field">
+            <label class="visually-hidden" for="footer-email-input">Enter your e-mail to sign-up</label>
+            <input type="email" name="sign-up-email" id="footer-email-input" placeholder="Your E-mail">
+          </div>
+          <button class="footer__signup-button" type="submit">
+            <span>Sign up</span>
+            <svg width="29" height="9">
+              <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-big"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <ul class="footer__info-list footer__info-list--for-buyers list">
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Ordering & Payment</a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Terms & Conditions</a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Returns & Exchanges</a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Delivery</a>
+        </li>
+      </ul>
+      <ul class="footer__info-list footer__info-list--about-us list">
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">About CH</a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Stores & Hours</a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Jobs</a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <ul class="footer__info-list footer__info-list--socials list">
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">
+            <svg width="15" height="15">
+              <use xlink:href="img/icons/sprite_auto.svg#icon-socials-facebook"></use>
+            </svg>
+            <span>Facebook</span>
+          </a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">
+            <svg width="15" height="15">
+              <use xlink:href="img/icons/sprite_auto.svg#icon-socials-instagram"></use>
+            </svg>
+            <span>Instagram</span>
+          </a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">
+            <svg width="15" height="15">
+              <use xlink:href="img/icons/sprite_auto.svg#icon-socials-pinterest"></use>
+            </svg>
+            <span>Pinterest</span>
+          </a>
+        </li>
+        <li class="footer__info-item">
+          <a class="footer__info-link link" href="#">
+            <svg width="15" height="15">
+              <use xlink:href="img/icons/sprite_auto.svg#icon-socials-twitter"></use>
+            </svg>
+            <span>Twitter</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ul class="footer__info-list footer__info-list--for-buyers list">
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Ordering & Payment</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Terms & Conditions</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Returns & Exchanges</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Delivery</a>
-      </li>
-    </ul>
-    <ul class="footer__info-list footer__info-list--about-us list">
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">About CH</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Stores & Hours</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Jobs</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Contact Us</a>
-      </li>
-    </ul>
-    <ul class="footer__info-list footer__info-list--socials list">
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Facebook</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Instagram</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Pinterest</a>
-      </li>
-      <li class="footer__info-item">
-        <a class="footer__info-link link" href="#">Twitter</a>
-      </li>
-    </ul>
   </footer>
 </body>
 
