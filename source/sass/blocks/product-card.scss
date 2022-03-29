@@ -16,6 +16,11 @@
   display: block;
   width: 100%;
   height: auto;
+  object-fit: cover;
+}
+
+.product-card__picture--catalog img {
+  max-height: 272px;
 }
 
 .product-card h5 {
@@ -26,7 +31,6 @@
 }
 
 .product-card span {
-  margin-bottom: 15px;
   display: block;
   font-weight: 700;
   font-size: 14px;
