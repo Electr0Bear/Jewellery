@@ -1,0 +1,35 @@
+.product-card {
+  width: 100%;
+  height: auto;
+}
+
+.product-card__link {
+  display: block;
+  cursor: pointer;
+}
+
+.product-card__picture {
+  display: block;
+}
+
+.product-card__picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.product-card h5 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.product-card span {
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}

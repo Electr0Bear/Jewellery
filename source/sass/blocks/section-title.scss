@@ -1,0 +1,31 @@
+.section-title {
+  margin-top: 130px;
+  width: 100%;
+
+  @media (max-width: $tabletMax) {
+    margin-top: 80px;
+  }
+}
+
+.section-title h2 {
+  margin-top: 0;
+  margin-bottom: 35px;
+  font-family: $cormorantGaramond;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.section-title a {
+  margin: 0 auto 60px auto;
+  display: block;
+  width: fit-content;
+  line-height: 21px;
+  border-bottom: 1px solid $basicBrown;
+
+  @media (max-width: $tabletMax) {
+    margin-bottom: 50px;
+  }
+}

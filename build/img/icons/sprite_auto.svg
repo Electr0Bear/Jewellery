@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow-big" viewBox="0 0 30 11">
 <path d="M0 5.5H29M29 5.5L23.5135 1M29 5.5L23.5135 10" stroke="currentColor"/>
 </symbol><symbol id="icon-arrow-small" viewBox="0 0 17 10">
-<path d="M16 9L8.5 1L1 9" stroke="currentColor"/>
+<path d="M16 9L8.5 1L1 9" fill="none" stroke="currentColor"/>
 </symbol><symbol id="icon-burger-menu" viewBox="0 0 25 18">
 <path d="M0 1H25M0 9H25M0 17H25" stroke="currentColor" stroke-width="2"/>
 </symbol><symbol id="icon-cross" viewBox="0 0 14 14">

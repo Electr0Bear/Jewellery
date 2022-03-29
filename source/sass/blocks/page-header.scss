@@ -1,0 +1,74 @@
+.page-header {
+  color: $white;
+  position: relative;
+}
+
+.page-header__wrapper {
+  background-color: $brownOpacue07;
+}
+
+.page-header h2,
+.page-header h4 {
+  margin: 0;
+  font-family: $cormorantGaramond;
+  text-align: center;
+  color: $white;
+}
+
+.page-header--main {
+  background-image: url("../img/background/desktop/main-page-header@1x.png");
+  background-size: cover;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/desktop/main-page-header@2x.png");
+  }
+
+  @media (max-width: $tabletMax) {
+    background-image: url("../img/background/tablet/main-page-header@1x.png");
+  }
+
+  @media (max-width: $tabletMax) and (min-resolution: 144dpi), (max-width: $tabletMax) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/tablet/main-page-header@2x.png");
+  }
+
+  @media (max-width: $mobileMax) {
+    background-image: url("../img/background/mobile/main-page-header@1x.png");
+  }
+
+  @media (max-width: $mobileMax) and (min-resolution: 144dpi), (max-width: $mobileMax) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/mobile/main-page-header@2x.png");
+  }
+}
+
+.page-header--main .page-header__wrapper {
+  padding: 194px 0;
+
+  @media (max-width: $mobileMax) {
+    padding: 200px 0;
+  }
+}
+
+.page-header--main h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 58px;
+  letter-spacing: 0.03em;
+
+  @media (max-width: $mobileMax) {
+    font-size: 38px;
+    line-height: 49px;
+  }
+}
+
+.page-header--main h4 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 49px;
+
+  @media (max-width: $mobileMax) {
+    font-size: 34px;
+    line-height: 44px;
+  }
+}
