@@ -26,6 +26,10 @@
 
 .product-card__picture--new-product img {
   min-height: 284px;
+
+  @media (max-width: $tabletMax) {
+    height: 340px;
+  }
 }
 
 .product-card__picture--catalog img {

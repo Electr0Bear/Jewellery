@@ -76,7 +76,7 @@
 }
 
 .header__top {
-  padding-top: 45px;
+  padding-top: 38px;
   padding-bottom: 56px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -123,6 +123,7 @@
 }
 
 .header__search-field input {
+  margin-left: 12px;
   width: 300px;
   font-family: $poppins;
   font-weight: 500;
@@ -171,6 +172,7 @@
 .header__link {
   margin: 3px 17.5px;
   display: block;
+  font-size: 14px;
   color: inherit;
 
   &:last-child {
@@ -185,6 +187,9 @@
 }
 
 .header__cart-link {
+  display: flex;
+  align-items: center;
+
   @media (max-width: $tabletMax) {
     &::after {
       display: none;
@@ -202,6 +207,8 @@
 }
 
 .header__cart-link span {
+  margin-left: 4px;
+
   @media (max-width: $tabletMax) {
     position: absolute;
     width: 1px;
@@ -230,7 +237,7 @@
 }
 
 .header__bottom-nav {
-  padding: 18px 0;
+  padding: 8px 0 15px 0;
   width: 100%;
   background-color: $white;
   border-top: 1px solid $grey2;
@@ -247,6 +254,7 @@
 }
 
 .header__nav-list {
+  padding-left: 108px;
   display: flex;
   flex-flow: row wrap;
   align-items: center;

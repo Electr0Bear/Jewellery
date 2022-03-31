@@ -127,12 +127,12 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   const nextPageButton = navigation.querySelector('.new-products__nav-next-page');
 
 
+  //Получение обновлённых массивов с количеством продуктов и страниц
   const getNavPagesArr = () => Array.from(navigation.querySelectorAll('.new-products__nav-item'));
   const getProductsArr = () => Array.from(productList.querySelectorAll('.new-products__product-card'));
 
   //Поиск текущих элементов
   const getShownElements = () => {
-
     const shownElements = getProductsArr().filter(element => window.getComputedStyle(element).getPropertyValue('display') !== 'none');
     const firstActiveElementIndex = getProductsArr().indexOf(shownElements[0]);
     const lastActiveElementIndex = getProductsArr().lastIndexOf(shownElements.pop());
@@ -152,38 +152,78 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   }
 
   //Листание вправо
-  nextPageButton.addEventListener('click', evt => {
-    evt.preventDefault();
+  const flipPageRight = () => {
     const [firstActiveElementIndex, lastActiveElementIndex, numberOfElements] = getShownElements();
-
     if (lastActiveElementIndex !== getProductsArr().length - 1) {
       getProductsArr().forEach(element => {
         element.style.display = 'none';
       })
-
       for (let i = lastActiveElementIndex + 1; i <= lastActiveElementIndex + numberOfElements && i < getProductsArr().length; i++) {
         getProductsArr()[i].style.display = 'initial';
       }
     }
-    navActivePageHandler();
-  });
+  }
 
   //Листание влево
-  previousPageButton.addEventListener('click', evt => {
-    evt.preventDefault();
+  const flipPageLeft = () => {
     const [firstActiveElementIndex, lastActiveElementIndex, numberOfElements] = getShownElements();
-
     if (firstActiveElementIndex !== 0) {
       getProductsArr().forEach(element => {
         element.style.display = 'none';
       });
-
       for (let i = firstActiveElementIndex - 1; i >= firstActiveElementIndex - numberOfElements && i >= 0; i--) {
         getProductsArr()[i].style.display = 'initial';
       }
     }
-    navActivePageHandler();
-  });
+  }
+
+  //Обработчик на ссылки на след и пред страницы
+  const nextPrevPageHandler = () => {
+    nextPageButton.addEventListener('click', evt => {
+      evt.preventDefault();
+      flipPageRight();
+      navActivePageHandler();
+    });
+
+    previousPageButton.addEventListener('click', evt => {
+      evt.preventDefault();
+      flipPageLeft();
+      navActivePageHandler();
+    });
+  }
+
+
+  //Обработка свайпов
+  let touchstartX = 0;
+  let touchendX = 0;
+
+  const handleGesture = () => {
+    if (touchendX < touchstartX) {
+      flipPageRight();
+      navActivePageHandler();
+    };
+    if (touchendX > touchstartX) {
+      flipPageLeft();
+      navActivePageHandler();
+    };
+  }
+
+  const handleStart = (evt) => {
+    evt.preventDefault();
+    touchstartX = evt.changedTouches[0].screenX;
+  }
+
+  const handleEnd = (evt) => {
+    evt.preventDefault();
+    touchendX = evt.changedTouches[0].screenX;
+    handleGesture();
+  }
+
+  const swipeHandler = () => {
+    productList.addEventListener('touchstart', handleStart, false);
+    productList.addEventListener('touchend', handleEnd, false);
+  }
+
 
   //Количество страниц в навигации
   const defineNumOfPages = () => {
@@ -197,10 +237,10 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   const navPageLinksHandler = () => {
     const neededPages = defineNumOfPages();
     if (neededPages > 0) {
-      for (let i=neededPages; i > 0; i--) {
+      for (let i = neededPages; i > 0; i--) {
         const pageTemplate = document.querySelector('#nav-page').content.querySelector('.new-products__nav-item');
         const newPage = pageTemplate.cloneNode(true);
-        newPage.querySelector('.new-products__nav-page').textContent = getNavPagesArr().length+1;
+        newPage.querySelector('.new-products__nav-page').textContent = getNavPagesArr().length + 1;
         navList.appendChild(newPage);
       }
       navPageHandler();
@@ -244,14 +284,14 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
       if ((lastActiveElementIndex + 1) % 4 === 0) {
         console.log(lastActiveElementIndex)
         inactiveElementsArr = getProductsArr().slice((firstActiveElementIndex - 2), firstActiveElementIndex);
-        console.log (inactiveElementsArr);
+        console.log(inactiveElementsArr);
       } else {
         inactiveElementsArr = getProductsArr().slice((lastActiveElementIndex + 1), (lastActiveElementIndex + 3));
       }
       inactiveElementsArr.forEach(element => {
         element.style.display = 'initial';
       });
-    } else if (document.body.clientWidth < 1007){
+    } else if (document.body.clientWidth < 1007) {
       console.log(123)
       let extraActiveElementsArr = getProductsArr().slice((firstActiveElementIndex + 2), (firstActiveElementIndex + 5));
       console.log(extraActiveElementsArr);
@@ -270,7 +310,8 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
     }, DELAY));
   }
 
-
+  swipeHandler();
+  nextPrevPageHandler();
   navPageHandler();
   navPageLinksHandler();
   windowResizeHandler();
@@ -305,7 +346,7 @@ if (document.querySelector('.catalog-filter')) {
     });
   });
 
-  //Появление каталога в планшетной версии и мобильной
+  //Появление фильтра в планшетной версии и мобильной
   if (document.body.clientWidth < 1024 && document.querySelector('.catalog-filter__button--show-filter')) {
     const filterShowBtn = document.querySelector('.catalog-filter__button--show-filter');
     const filterCloseBtn = document.querySelector('.catalog-filter__close-button');
