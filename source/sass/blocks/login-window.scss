@@ -1,0 +1,131 @@
+.login-window {
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  &--login-page {
+    display: block;
+  }
+
+  &--opened {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.login-window__wrapper {
+  margin: 0 auto;
+  padding-top: 138px;
+  position: relative;
+  width: 430px;
+  background-image: url("../../img/background/desktop/login@1x.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/desktop/login@2x.png");
+  }
+
+  @media (max-width: $tabletMax) {
+    background-image: url("../img/background/tablet/login@1x.png");
+  }
+
+  @media (max-width: $tabletMax) and (min-resolution: 144dpi),
+    (max-width: $tabletMax) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/tablet/login@2x.png");
+  }
+
+  @media (max-width: $mobileMax) {
+    background-image: url("../img/background/mobile/login@1x.png");
+  }
+
+  @media (max-width: $mobileMax) and (min-resolution: 144dpi),
+    (max-width: $mobileMax) and (min-resolution: 1.5dppx) {
+    background-image: url("../img/background/mobile/login@2x.png");
+  }
+}
+
+.login-window__close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.login-window__form {
+  padding: 60px 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $cream;
+}
+
+.login-window__form h2 {
+  margin-top: 0;
+  font-family: $cormorantGaramond;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.login-window__input-field {
+  width: 100%;
+  border-bottom: 1px solid $basicDark;
+}
+
+.login-window__input-field--email {
+  margin-bottom: 40px;
+}
+
+.login-window__input-field input {
+  width: 100%;
+  font-family: $poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: $grey1;
+  }
+}
+
+.login-window__forgot-pass-button {
+  font-size: 12px;
+  line-height: 18px;
+  color: $grey1;
+  align-self: flex-end;
+}
+
+.login-window__submit-button {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.login-window__signup {
+  font-size: 14px;
+  line-height: 21px;
+  color: $grey1;
+  text-align: center;
+}
+
+.login-window__signup-link {
+  font-size: 14px;
+  line-height: 21px;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px $basicBrown;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

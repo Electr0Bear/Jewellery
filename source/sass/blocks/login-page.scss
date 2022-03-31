@@ -1,0 +1,23 @@
+.login-page {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.login-page__return-link {
+  margin-bottom: 50px;
+  display: block;
+  width: fit-content;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px $basicBrown;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.login__return-link svg {
+  transform: rotate(180deg);
+}

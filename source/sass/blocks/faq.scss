@@ -25,6 +25,11 @@
   gap: 10px;
   width: 100%;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px $basicBrown;
+  }
 }
 
 .faq__question h3 {

@@ -98,6 +98,16 @@
   background-color: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .footer__info-item {
@@ -110,6 +120,15 @@
 
 .footer__info-link {
   color: $white;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px $white;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .footer__info-list {

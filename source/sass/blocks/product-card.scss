@@ -1,6 +1,11 @@
 .product-card {
   width: 100%;
   height: auto;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 9px $shadow;
+  }
 }
 
 .product-card__link {
@@ -15,8 +20,12 @@
 .product-card__picture img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+}
+
+.product-card__picture--new-product img {
+  min-height: 284px;
 }
 
 .product-card__picture--catalog img {
@@ -31,6 +40,7 @@
 }
 
 .product-card span {
+  padding-bottom: 15px;
   display: block;
   font-weight: 700;
   font-size: 14px;

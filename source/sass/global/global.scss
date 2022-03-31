@@ -15,6 +15,10 @@ html {
   color: $basicDark;
   background-color: $white;
   box-sizing: border-box;
+
+  &--disabled-scroll {
+    overflow-y: hidden;
+  }
 }
 
 .body__main {
@@ -53,12 +57,83 @@ html {
 }
 
 .link {
+  display: block;
+  width: fit-content;
+  position: relative;
   font-family: $poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   color: $basicDark;
   text-decoration: none;
+}
+
+.link--01 {
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background-color: $basicDark;
+    transition: width 0.5s;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      background-color: $basicBrown;
+      transition: width 0.5s;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.link--02 {
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    width: 0;
+    height: 1px;
+    background-color: $white;
+    transition: width 0.5s;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      content: "";
+      width: 100%;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      background-color: $white;
+      transition: width 0.5s;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .list {
@@ -86,4 +161,13 @@ html {
   border: 1px solid $basicBrown;
   outline: none;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    filter: grayscale(0.4);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
