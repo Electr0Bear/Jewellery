@@ -63,6 +63,7 @@ if (document.querySelector('.header')) {
       loginModal.classList.toggle('login-window--opened', !modalOpened);
       header.classList.remove('header--opened');
       header.classList.add('header--closed');
+      body.classList.remove('body--disabled-scroll');
     }
 
     loginLinksArr.forEach(button => {
@@ -259,17 +260,19 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
     getNavPagesArr().forEach(page => {
       page.addEventListener('click', evt => {
         evt.preventDefault();
-        const pageIndex = getNavPagesArr().indexOf(page);
-        const [firstActiveElementIndex, lastActiveElementIndex, numberOfElements] = getShownElements();
-        const lastElementIndex = (numberOfElements * (pageIndex + 1)) - 1;
-        if (lastActiveElementIndex !== lastElementIndex) {
-          getProductsArr().forEach(element => {
-            element.style.display = 'none';
-          });
-          const activeElementsArr = getProductsArr().slice((lastElementIndex + 1 - numberOfElements), (lastElementIndex + 1));
-          activeElementsArr.forEach(element => {
-            element.style.display = 'initial';
-          });
+        if (document.body.clientWidth > 768) {
+          const pageIndex = getNavPagesArr().indexOf(page);
+          const [firstActiveElementIndex, lastActiveElementIndex, numberOfElements] = getShownElements();
+          const lastElementIndex = (numberOfElements * (pageIndex + 1)) - 1;
+          if (lastActiveElementIndex !== lastElementIndex) {
+            getProductsArr().forEach(element => {
+              element.style.display = 'none';
+            });
+            const activeElementsArr = getProductsArr().slice((lastElementIndex + 1 - numberOfElements), (lastElementIndex + 1));
+            activeElementsArr.forEach(element => {
+              element.style.display = 'initial';
+            });
+          }
         }
         navActivePageHandler();
       });
@@ -354,6 +357,7 @@ if (document.querySelector('.catalog-filter')) {
     const filterHandler = () => {
       const filterIsOpened = catalogFilterForm.classList.contains('catalog-filter__form--opened');
       catalogFilterForm.classList.toggle('catalog-filter__form--opened', !filterIsOpened);
+      filterShowBtn.classList.toggle('catalog-filter__button--show-filter-opened', !filterIsOpened);
     }
 
     filterShowBtn.addEventListener('click', evt => {

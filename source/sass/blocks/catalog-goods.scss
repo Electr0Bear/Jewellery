@@ -3,15 +3,16 @@
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   column-gap: 30px;
-  row-gap: 40px;
+  row-gap: 20px;
 
   @media (max-width: $mobileMax) {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
   }
 }
 
 .catalog-goods__nav-panel {
-  margin-top: 40px;
+  margin-top: 18px;
 
   &::before {
     content: "";
@@ -29,26 +30,33 @@
 }
 
 .catalog-goods__nav-wrapper {
-  padding-top: 40px;
+  padding-top: 34px;
   display: grid;
   grid-template-columns: auto 1fr auto;
 }
 
 .catalog-goods__nav-pages {
-  margin-right: 15px;
+  margin-right: 35px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.catalog-goods__nav-page {
-  margin: 2px 7.5px;
-}
-
 .catalog-goods__nav-page-link {
+  padding: 2px 7px;
   color: $grey1;
 
   &--current {
     color: $basicDark;
+  }
+
+  &:hover,
+  &:focus {
+    color: $basicDark;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }

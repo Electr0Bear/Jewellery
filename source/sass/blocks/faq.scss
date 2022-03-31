@@ -1,21 +1,35 @@
+.faq__section-title h2 {
+  font-size: 34px;
+  line-height: 44px;
+  letter-spacing: 0.03em;
+}
+
 .faq__list {
-  margin: 60px 100px 0 100px;
+  margin: 50px 100px 0 100px;
   border: 1px solid $basicBrown;
 
   @media (max-width: $tabletMax) {
-    margin: 60px 0 0 0;
+    margin: 50px 0 0 0;
+  }
+
+  @media (max-width: $tabletMax) {
+    margin: 28px 0 0 0;
   }
 }
 
 .faq__item {
-  padding: 50px 38px;
+  padding: 44px 48px 42px 45px;
 
   &:not(:last-child) {
     border-bottom: 1px solid $basicBrown;
   }
 
+  @media (max-width: $tabletMax) {
+    padding: 42px 48px 45px 48px;
+  }
+
   @media (max-width: $mobileMax) {
-    padding: 22px 25px 24px 25px;
+    padding: 16px 25px 20px 25px;
   }
 }
 
@@ -25,11 +39,6 @@
   gap: 10px;
   width: 100%;
   cursor: pointer;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 1px $basicBrown;
-  }
 }
 
 .faq__question h3 {
@@ -58,6 +67,11 @@
   color: $basicBrown;
   transform: rotate(180deg);
 
+  @media (max-width: $tabletMax) {
+    width: 25px;
+    height: 15px;
+  }
+
   @media (max-width: $mobileMax) {
     width: 20px;
     height: 10px;
@@ -65,14 +79,22 @@
 }
 
 .faq__item p {
-  margin-top: 20px;
+  margin-top: 7px;
+  margin-left: 5px;
   margin-bottom: 0;
   display: none;
-  max-width: 527px;
+  max-width: 525px;
   font-weight: 400;
   line-height: 21px;
 
+  @media (max-width: $tabletMax) {
+    margin-top: 25px;
+    margin-left: 0;
+    max-width: 530px;
+  }
+
   @media (max-width: $mobileMax) {
+    margin-top: 16px;
     padding-right: 33px;
     font-size: 14px;
     line-height: 20px;

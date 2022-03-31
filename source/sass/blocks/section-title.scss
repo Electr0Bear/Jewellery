@@ -1,21 +1,29 @@
 .section-title {
-  margin-top: 130px;
+  margin-top: 111px;
   width: 100%;
 
   @media (max-width: $tabletMax) {
-    margin-top: 80px;
+    margin-top: 60px;
+  }
+
+  @media (max-width: $mobileMax) {
+    margin-top: 50px;
   }
 }
 
 .section-title h2 {
   margin-top: 0;
-  margin-bottom: 35px;
+  margin-bottom: 22px;
   font-family: $cormorantGaramond;
   font-style: normal;
   font-weight: 700;
   font-size: 34px;
   line-height: 44px;
   text-align: center;
+
+  @media (max-width: $tabletMax) {
+    margin-bottom: 20px;
+  }
 }
 
 .section-title a {
@@ -26,7 +34,11 @@
   border-bottom: 1px solid $basicBrown;
 
   @media (max-width: $tabletMax) {
-    margin-bottom: 50px;
+    margin-bottom: 52px;
+  }
+
+  @media (max-width: $mobileMax) {
+    margin-bottom: 45px;
   }
 
   &:hover,

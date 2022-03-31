@@ -1,5 +1,6 @@
 .page-header {
   color: $white;
+  background-color: $basicBrown;
   position: relative;
 }
 
@@ -41,10 +42,10 @@
 }
 
 .page-header--main .page-header__wrapper {
-  padding: 194px 0;
+  padding: 182px 0;
 
   @media (max-width: $mobileMax) {
-    padding: 200px 0;
+    padding: 185px 0;
   }
 }
 
@@ -65,7 +66,7 @@
   font-style: italic;
   font-weight: 400;
   font-size: 38px;
-  line-height: 49px;
+  line-height: 42px;
 
   @media (max-width: $mobileMax) {
     font-size: 34px;
@@ -99,17 +100,18 @@
 }
 
 .page-header--catalog .page-header__wrapper {
-  padding: 102px 0;
+  padding: 90px 0 95px 0;
 
   @media (max-width: $mobileMax) {
-    padding: 89px 0;
+    padding: 79px 0 83px 0;
   }
 }
 
 .page-header--catalog h2 {
+  margin-bottom: 3px;
   font-style: normal;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 32px;
   line-height: 44px;
   letter-spacing: 0.03em;
 }
