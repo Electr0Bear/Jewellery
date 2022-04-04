@@ -146,7 +146,8 @@
   margin-bottom: 18px;
 }
 
-.footer__info-link {
+.footer__info-item a {
+  width: fit-content;
   color: $white;
 }
 
@@ -165,12 +166,12 @@
   }
 }
 
-.footer__info-list--socials .footer__info-link {
+.footer__info-list--socials a {
   display: flex;
   align-items: center;
 }
 
-.footer__info-list--socials .footer__info-link svg {
+.footer__info-list--socials a svg {
   margin-right: 15px;
 
   @media (max-width: $mobileMax) {
@@ -180,7 +181,7 @@
   }
 }
 
-.footer__info-list--socials .footer__info-link span {
+.footer__info-list--socials a span {
   @media (max-width: $mobileMax) {
     position: absolute;
     width: 1px;

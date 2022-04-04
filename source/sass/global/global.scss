@@ -56,19 +56,19 @@ html {
   overflow: hidden;
 }
 
-.link {
-  display: block;
-  width: fit-content;
+a {
   position: relative;
+  display: block;
   font-family: $poppins;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   color: $basicDark;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.link--01 {
+.on-hover-01 {
 
   &::after {
     content: "";
@@ -102,7 +102,7 @@ html {
   }
 }
 
-.link--02 {
+.on-hover-02 {
 
   &::after {
     content: "";
@@ -127,6 +127,40 @@ html {
       bottom: -1px;
       height: 1px;
       background-color: $white;
+      transition: width 0.5s;
+    }
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.on-hover-03 {
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: $basicBrown;
+    transition: width 0.5s;
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      content: "";
+      width: 0;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      background-color: $basicDark;
       transition: width 0.5s;
     }
   }

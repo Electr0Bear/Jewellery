@@ -42,13 +42,9 @@
   justify-content: center;
 }
 
-.catalog-goods__nav-page-link {
+.catalog-goods__nav-page a {
   padding: 2px 7px;
   color: $grey1;
-
-  &--current {
-    color: $basicDark;
-  }
 
   &:hover,
   &:focus {
@@ -59,4 +55,8 @@
   &:active {
     opacity: 0.5;
   }
+}
+
+.catalog-goods__nav-page--current a {
+  color: $basicDark;
 }

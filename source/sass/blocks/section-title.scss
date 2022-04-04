@@ -31,7 +31,6 @@
   display: block;
   width: fit-content;
   line-height: 21px;
-  border-bottom: 1px solid $basicBrown;
 
   @media (max-width: $tabletMax) {
     margin-bottom: 52px;
@@ -39,14 +38,5 @@
 
   @media (max-width: $mobileMax) {
     margin-bottom: 45px;
-  }
-
-  &:hover,
-  &:focus {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 0.5;
   }
 }

@@ -141,6 +141,15 @@
   line-height: 18px;
   color: $grey1;
   align-self: flex-end;
+
+  &:hover,
+  &:focus {
+    color: $basicDark;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .login-window__submit-button {
@@ -162,17 +171,8 @@
   text-align: center;
 }
 
-.login-window__signup-link {
+.login-window__signup a {
   margin-left: 3px;
   font-size: 14px;
   line-height: 21px;
-
-  &:hover,
-  &:focus {
-    box-shadow: 0 1px $basicBrown;
-  }
-
-  &:active {
-    opacity: 0.3;
-  }
 }

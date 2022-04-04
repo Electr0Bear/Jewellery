@@ -2,7 +2,7 @@
 
 const pageWidth = window.screen.width;
 const body = document.querySelector('.body');
-const DELAY = 500;
+const DELAY = 100;
 
 
 const onClickSpaceEnter = (element) => {
@@ -137,7 +137,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
     const shownElements = getProductsArr().filter(element => window.getComputedStyle(element).getPropertyValue('display') !== 'none');
     const firstActiveElementIndex = getProductsArr().indexOf(shownElements[0]);
     const lastActiveElementIndex = getProductsArr().lastIndexOf(shownElements.pop());
-    const numberOfElements = document.body.clientWidth > 1007 ? 4 : 2;
+    const numberOfElements = document.body.clientWidth > 1002 ? 4 : 2;
 
     return [firstActiveElementIndex, lastActiveElementIndex, numberOfElements];
   }
@@ -228,7 +228,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
 
   //Количество страниц в навигации
   const defineNumOfPages = () => {
-    let numOfPages = document.body.clientWidth < 1007 ? getProductsArr().length / 2 : getProductsArr().length / 4;
+    let numOfPages = document.body.clientWidth < 1002 ? getProductsArr().length / 2 : getProductsArr().length / 4;
     const currentPages = getNavPagesArr();
     const neededPages = numOfPages - currentPages.length;
     return neededPages;
@@ -282,7 +282,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   //Убирает лишние элементы при переключении разрешения
   const activeProductsHandler = () => {
     const [firstActiveElementIndex, lastActiveElementIndex, numberOfElements] = getShownElements();
-    if (document.body.clientWidth > 1006 && lastActiveElementIndex === firstActiveElementIndex + 1) {
+    if (document.body.clientWidth > 1002 && lastActiveElementIndex === firstActiveElementIndex + 1) {
       let inactiveElementsArr;
       if ((lastActiveElementIndex + 1) % 4 === 0) {
         console.log(lastActiveElementIndex)
@@ -294,7 +294,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
       inactiveElementsArr.forEach(element => {
         element.style.display = 'initial';
       });
-    } else if (document.body.clientWidth < 1007) {
+    } else if (document.body.clientWidth < 1002) {
       console.log(123)
       let extraActiveElementsArr = getProductsArr().slice((firstActiveElementIndex + 2), (firstActiveElementIndex + 5));
       console.log(extraActiveElementsArr);

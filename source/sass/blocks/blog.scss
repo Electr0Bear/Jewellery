@@ -143,9 +143,7 @@
   }
 }
 
-.blog__article-link {
-  display: block;
+.blog__article-info a {
   width: fit-content;
   line-height: 21px;
-  border-bottom: 1px solid $basicBrown;
 }

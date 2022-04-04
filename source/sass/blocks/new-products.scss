@@ -122,15 +122,9 @@
   }
 }
 
-.new-products__nav-item--current .new-products__nav-page {
-  color: $basicDark;
-}
-
-.new-products__nav-page {
+.new-products__nav-item a {
   padding: 0 7.5px;
-  display: block;
   color: $grey1;
-  cursor: pointer;
 
   @media (max-width: $tabletMax) {
     padding: 0 7px;
@@ -139,4 +133,18 @@
   @media (max-width: $mobileMax) {
     cursor: default;
   }
+
+  &:hover,
+  &:focus {
+    color: $basicDark;
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.new-products__nav-item--current a {
+  color: $basicDark;
 }
