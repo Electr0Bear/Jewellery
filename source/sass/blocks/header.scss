@@ -187,7 +187,7 @@
 }
 
 .header__user-links a {
-  margin: 3px 17.5px;
+  margin: 3px 16px;
   display: block;
   width: fit-content;
   font-size: 14px;
@@ -289,9 +289,7 @@
   }
 
   @media (max-width: $mobileMax) {
-    padding-top: 0;
     padding-left: 15px;
-    padding-bottom: 10px;
   }
 }
 
@@ -300,15 +298,15 @@
   list-style: none;
 
   @media (max-width: $tabletMax) {
-    padding-top: 30px;
-    padding-bottom: 35px;
+    padding-top: 40px;
+    padding-bottom: 45px;
     display: flex;
     flex-flow: column nowrap;
   }
 
   @media (max-width: $mobileMax) {
-    padding-top: 10px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 35px;
   }
 }
 

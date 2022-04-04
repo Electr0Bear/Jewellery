@@ -80,15 +80,16 @@
 
   <main class="body__main main">
 
-    <div class="main__page-header page-header page-header--main">
+    <section class="main__page-header page-header page-header--main">
       <div class="page-header__wrapper">
-        <h2>PERFECTION</h2>
-        <h4>made to be yours</h4>
+        <h2>Perfection</h2>
+        <h3>made to be yours</h3>
       </div>
-    </div>
+    </section>
 
-    <div class="main__page-body page-body container">
+    <section class="main__page-body page-body container">
       <div class="page-body__wrapper page-body__wrapper--main">
+        <h2 class="visually-hidden">Perfect jewellerry for you</h2>
         <section class="page-body__new-products new-products">
           <div class="new-products__section-title section-title">
             <h2>New In</h2>
@@ -292,13 +293,13 @@
             </ul>
             <nav class="new-products__nav">
               <a class="new-products__nav-previous-page" href="#">
-                <svg width="29" height="9">
+                <svg width="31" height="15">
                   <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-big"></use>
                 </svg>
                 <span class="visually-hidden">Previous page</span>
               </a>
               <a class="new-products__nav-next-page" href="#">
-                <svg width="29" height="9">
+                <svg width="31" height="15">
                   <use xlink:href="img/icons/sprite_auto.svg#icon-arrow-big"></use>
                 </svg>
                 <span class="visually-hidden">Next page</span>
@@ -446,7 +447,7 @@
                 </picture>
               </a>
             </li>
-            <li class="gallery__item">
+            <li class="gallery__item gallery__item--large">
               <a href="#">
                 <!-- 1x: 230px: 2x: 460px -->
                 <picture class="gallery__item-picture">
@@ -533,7 +534,7 @@
           </ul>
         </section>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="body__footer footer">
@@ -652,8 +653,8 @@
       <a class="new-products__nav-page link"></a>
     </li>
   </template>
-</body>
 
-<script type="module" src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
 
 </html>

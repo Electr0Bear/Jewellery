@@ -12,7 +12,7 @@
     margin: 50px 0 0 0;
   }
 
-  @media (max-width: $tabletMax) {
+  @media (max-width: $mobileMax) {
     margin: 28px 0 0 0;
   }
 }
@@ -29,7 +29,7 @@
   }
 
   @media (max-width: $mobileMax) {
-    padding: 16px 25px 20px 25px;
+    padding: 17px 25px 19px 25px;
   }
 }
 
@@ -74,8 +74,9 @@
   }
 
   @media (max-width: $mobileMax) {
-    width: 20px;
-    height: 10px;
+    margin-top: 3px;
+    width: 22px;
+    height: 12px;
   }
 }
 
@@ -95,7 +96,7 @@
   }
 
   @media (max-width: $mobileMax) {
-    margin-top: 16px;
+    margin-top: 14px;
     padding-right: 33px;
     font-size: 14px;
     line-height: 20px;

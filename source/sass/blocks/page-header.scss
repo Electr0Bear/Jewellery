@@ -9,7 +9,7 @@
 }
 
 .page-header h2,
-.page-header h4 {
+.page-header h3 {
   margin: 0;
   font-family: $cormorantGaramond;
   text-align: center;
@@ -55,6 +55,7 @@
   font-size: 45px;
   line-height: 58px;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
 
   @media (max-width: $mobileMax) {
     font-size: 38px;
@@ -62,7 +63,7 @@
   }
 }
 
-.page-header--main h4 {
+.page-header--main h3 {
   font-style: italic;
   font-weight: 400;
   font-size: 38px;
@@ -114,9 +115,10 @@
   font-size: 32px;
   line-height: 44px;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.page-header--catalog h4 {
+.page-header--catalog h3 {
   padding: 0 36px;
   font-style: italic;
   font-weight: 400;
