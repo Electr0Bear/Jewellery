@@ -22,8 +22,15 @@ const debounce = (cb, delay) => {
   };
 };
 
-//Шапка
+const clearForm = (form) => {
+  form.addEventListener('submit', evt => {
+    evt.preventDefault();
+    const inputsArr = form.querySelectorAll('input');
+    inputsArr.forEach(inputField => inputField.value = '');
+  })
+}
 
+//Шапка
 if (document.querySelector('.header')) {
   const header = document.querySelector('.header');
 
@@ -56,45 +63,66 @@ if (document.querySelector('.header')) {
     const loginModal = document.querySelector('.login-window');
     const loginLinksArr = document.querySelectorAll('.header__login-link');
     const closeModalBtn = loginModal.querySelector('.login-window__close-button');
-    const emailInput = document.querySelector('.login-window__input-field--email input');
+    const loginForm = loginModal.querySelector('.login-window__form');
+    const emailInput = loginForm.querySelector('.login-window__input-field--email input');
+
+    //закрытие окна по нажатию Esc
+    const onEscClickModal = (evt) => {
+      if (evt.key === 'Escape') {
+        console.log('esc pressed');
+        loginModal.classList.remove('login-window--opened');
+        body.classList.remove('body--disabled-scroll');
+        document.removeEventListener('keydown', onEscClickModal);
+      }
+    }
+
+    //закрытие окна по клику на оверлей
+    const onLeftClickModal = (evt) => {
+      if (evt.target === loginModal) {
+        loginModal.classList.remove('login-window--opened');
+        body.classList.remove('body--disabled-scroll');
+        loginModal.removeEventListener('click', onLeftClickModal);
+      }
+    }
 
     const loginModalHandler = () => {
       const modalOpened = loginModal.classList.contains('login-window--opened');
       loginModal.classList.toggle('login-window--opened', !modalOpened);
-      header.classList.remove('header--opened');
-      header.classList.add('header--closed');
-      body.classList.remove('body--disabled-scroll');
+      body.classList.toggle('body--disabled-scroll', !modalOpened);
+      if (!modalOpened) {
+        header.classList.add('header--closed');
+        header.classList.remove('header--opened');
+        document.addEventListener('keydown', onEscClickModal);
+        loginModal.addEventListener('click', onLeftClickModal);
+        clearForm(loginForm);
+      }
     }
 
-    loginLinksArr.forEach(button => {
-      onClickSpaceEnter(button);
-      button.addEventListener('click', evt => {
-        evt.preventDefault();
-        loginModalHandler();
-        emailInput.focus();
-        loginModal.addEventListener('keydown', evt => {
+    const loginModalListener = () => {
+      loginLinksArr.forEach(button => {
+        button.addEventListener('click', evt => {
           evt.preventDefault();
-          if (evt.key === 'Escape') {
-            loginModal.classList.remove('login-window--opened');
-          }
-        });
-        loginModal.addEventListener('click', evt => {
-          evt.preventDefault();
-          if (evt.target === loginModal) {
-            loginModal.classList.remove('login-window--opened');
-          }
+          onClickSpaceEnter(button);
+          loginModalHandler();
         })
       });
-    });
 
-    onClickSpaceEnter(closeModalBtn);
-    closeModalBtn.addEventListener('click', evt => {
-      evt.preventDefault();
-      loginModalHandler();
-    })
+      closeModalBtn.addEventListener('click', evt => {
+        evt.preventDefault();
+        nClickSpaceEnter(closeModalBtn);
+        loginModalHandler();
+      })
+    }
+
+    loginModalListener();
+  }
+
+  //Очистка поисковой строки при сабмите
+  if (document.querySelector('.header__search-form')) {
+    const headerSearchForm = document.querySelector('.header__search-form');
+    clearForm(headerSearchForm);
   }
 }
-
 
 //Работа блока FAQ
 if (document.querySelector('.faq__list')) {
@@ -115,8 +143,6 @@ if (document.querySelector('.faq__list')) {
     })
   });
 }
-
-
 
 //Работа окна слайдера новых продуктов
 if (document.querySelector('.new-products__list') && document.querySelector('.new-products__nav')) {
@@ -192,7 +218,6 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
       navActivePageHandler();
     });
   }
-
 
   //Обработка свайпов
   let touchstartX = 0;
@@ -285,9 +310,9 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
     if (document.body.clientWidth > 1002 && lastActiveElementIndex === firstActiveElementIndex + 1) {
       let inactiveElementsArr;
       if ((lastActiveElementIndex + 1) % 4 === 0) {
-        console.log(lastActiveElementIndex)
+
         inactiveElementsArr = getProductsArr().slice((firstActiveElementIndex - 2), firstActiveElementIndex);
-        console.log(inactiveElementsArr);
+
       } else {
         inactiveElementsArr = getProductsArr().slice((lastActiveElementIndex + 1), (lastActiveElementIndex + 3));
       }
@@ -295,9 +320,9 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
         element.style.display = 'initial';
       });
     } else if (document.body.clientWidth < 1002) {
-      console.log(123)
+
       let extraActiveElementsArr = getProductsArr().slice((firstActiveElementIndex + 2), (firstActiveElementIndex + 5));
-      console.log(extraActiveElementsArr);
+
       extraActiveElementsArr.forEach(element => {
         element.style.display = 'none';
       });
@@ -318,10 +343,6 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   navPageHandler();
   navPageLinksHandler();
   windowResizeHandler();
-
-
-
-
 }
 
 //Фильтр в каталоге
@@ -370,5 +391,10 @@ if (document.querySelector('.catalog-filter')) {
       filterHandler()
     });
   }
+}
 
+//Очистка формы подписки в футере при сабмите
+if (document.querySelector('.footer__sign-up')) {
+  const footerForm = document.querySelector('.footer__sign-up-form');
+  clearForm(footerForm);
 }
