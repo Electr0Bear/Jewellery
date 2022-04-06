@@ -109,7 +109,7 @@ if (document.querySelector('.header')) {
 
       closeModalBtn.addEventListener('click', evt => {
         evt.preventDefault();
-        nClickSpaceEnter(closeModalBtn);
+        onClickSpaceEnter(closeModalBtn);
         loginModalHandler();
       })
     }
@@ -145,17 +145,14 @@ if (document.querySelector('.faq__list')) {
 }
 
 //Работа окна слайдера новых продуктов
-if (document.querySelector('.new-products__list') && document.querySelector('.new-products__nav')) {
+if (document.querySelector('.new-products__list') && document.querySelector('.new-products__nav-list')) {
   const productList = document.querySelector('.new-products__list');
-  const productItemsArr = productList.querySelectorAll('.new-products__product-card');
-  const navigation = document.querySelector('.new-products__nav');
-  const navList = navigation.querySelector('.new-products__nav-list');
-  const previousPageButton = navigation.querySelector('.new-products__nav-previous-page');
-  const nextPageButton = navigation.querySelector('.new-products__nav-next-page');
-
+  const navList = document.querySelector('.new-products__nav-list');
+  const previousPageButton = document.querySelector('.new-products__nav-previous-page');
+  const nextPageButton = document.querySelector('.new-products__nav-next-page');
 
   //Получение обновлённых массивов с количеством продуктов и страниц
-  const getNavPagesArr = () => Array.from(navigation.querySelectorAll('.new-products__nav-item'));
+  const getNavPagesArr = () => Array.from(navList.querySelectorAll('.new-products__nav-item'));
   const getProductsArr = () => Array.from(productList.querySelectorAll('.new-products__product-card'));
 
   //Поиск текущих элементов
@@ -163,7 +160,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
     const shownElements = getProductsArr().filter(element => window.getComputedStyle(element).getPropertyValue('display') !== 'none');
     const firstActiveElementIndex = getProductsArr().indexOf(shownElements[0]);
     const lastActiveElementIndex = getProductsArr().lastIndexOf(shownElements.pop());
-    const numberOfElements = document.body.clientWidth > 1002 ? 4 : 2;
+    const numberOfElements = document.body.clientWidth > 1023 ? 4 : 2;
 
     return [firstActiveElementIndex, lastActiveElementIndex, numberOfElements];
   }
@@ -206,12 +203,14 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
 
   //Обработчик на ссылки на след и пред страницы
   const nextPrevPageHandler = () => {
+    onClickSpaceEnter(nextPageButton);
     nextPageButton.addEventListener('click', evt => {
       evt.preventDefault();
       flipPageRight();
       navActivePageHandler();
     });
 
+    onClickSpaceEnter(previousPageButton);
     previousPageButton.addEventListener('click', evt => {
       evt.preventDefault();
       flipPageLeft();
@@ -250,10 +249,9 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
     productList.addEventListener('touchend', handleEnd, false);
   }
 
-
   //Количество страниц в навигации
   const defineNumOfPages = () => {
-    let numOfPages = document.body.clientWidth < 1002 ? getProductsArr().length / 2 : getProductsArr().length / 4;
+    let numOfPages = document.body.clientWidth > 1023 ? getProductsArr().length / 4 : getProductsArr().length / 2;
     const currentPages = getNavPagesArr();
     const neededPages = numOfPages - currentPages.length;
     return neededPages;
@@ -283,6 +281,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   //Переход по номерам страниц
   const navPageHandler = () => {
     getNavPagesArr().forEach(page => {
+      onClickSpaceEnter(page);
       page.addEventListener('click', evt => {
         evt.preventDefault();
         if (document.body.clientWidth > 768) {
@@ -307,7 +306,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
   //Убирает лишние элементы при переключении разрешения
   const activeProductsHandler = () => {
     const [firstActiveElementIndex, lastActiveElementIndex, numberOfElements] = getShownElements();
-    if (document.body.clientWidth > 1002 && lastActiveElementIndex === firstActiveElementIndex + 1) {
+    if (document.body.clientWidth > 1023 && lastActiveElementIndex === firstActiveElementIndex + 1) {
       let inactiveElementsArr;
       if ((lastActiveElementIndex + 1) % 4 === 0) {
 
@@ -319,7 +318,7 @@ if (document.querySelector('.new-products__list') && document.querySelector('.ne
       inactiveElementsArr.forEach(element => {
         element.style.display = 'initial';
       });
-    } else if (document.body.clientWidth < 1002) {
+    } else if (document.body.clientWidth < 1024) {
 
       let extraActiveElementsArr = getProductsArr().slice((firstActiveElementIndex + 2), (firstActiveElementIndex + 5));
 

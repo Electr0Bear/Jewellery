@@ -19,6 +19,7 @@
 .page-header--main {
   background-image: url("../img/background/desktop/main-page-header@1x.png");
   background-size: cover;
+  background-position: center;
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image: url("../img/background/desktop/main-page-header@2x.png");
@@ -78,6 +79,7 @@
 .page-header--catalog {
   background-image: url("../img/background/desktop/catalog-page-header@1x.png");
   background-size: cover;
+  background-position: center;
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image: url("../img/background/desktop/catalog-page-header@2x.png");

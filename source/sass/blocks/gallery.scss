@@ -56,11 +56,6 @@
 
 .gallery__item {
   display: flex;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 9px $shadow;
-  }
 }
 
 .gallery__item--mobile-hidden {
@@ -71,11 +66,6 @@
 
 .gallery__item--large {
   grid-row: span 2;
-}
-
-.gallery__item a {
-  flex-grow: 1;
-  flex-shrink: 1;
 }
 
 .gallery__item-picture {
