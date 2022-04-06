@@ -56,66 +56,101 @@ if (document.querySelector('.header')) {
       evt.preventDefault();
       headerHandler();
     })
-  }
 
-  //Работа окна логина
-  if (document.querySelector('.login-window') && document.querySelector('.login-window__close-button') && document.querySelector('.header__login-link')) {
-    const loginModal = document.querySelector('.login-window');
-    const loginLinksArr = document.querySelectorAll('.header__login-link');
-    const closeModalBtn = loginModal.querySelector('.login-window__close-button');
-    const loginForm = loginModal.querySelector('.login-window__form');
-    const emailInput = loginForm.querySelector('.login-window__input-field--email input');
 
-    //закрытие окна по нажатию Esc
-    const onEscClickModal = (evt) => {
-      if (evt.key === 'Escape') {
-        console.log('esc pressed');
-        loginModal.classList.remove('login-window--opened');
-        body.classList.remove('body--disabled-scroll');
-        document.removeEventListener('keydown', onEscClickModal);
+    //Работа окна логина
+    if (document.querySelector('.login-window') && document.querySelector('.login-window__close-button') && document.querySelector('.header__login-link')) {
+      const loginModal = document.querySelector('.login-window');
+      const loginLinksArr = document.querySelectorAll('.header__login-link');
+      const closeModalBtn = loginModal.querySelector('.login-window__close-button');
+      const loginForm = loginModal.querySelector('.login-window__form');
+      const emailInput = loginForm.querySelector('.login-window__input-field--email input');
+
+      //закрытие окна по нажатию Esc
+      const onEscClickModal = (evt) => {
+        if (evt.key === 'Escape') {
+          loginModal.classList.remove('login-window--opened');
+          body.classList.remove('body--disabled-scroll');
+          document.removeEventListener('keydown', onEscClickModal);
+          loginModal.removeEventListener('keydown', focusTrap);
+          menuButton.focus();
+        }
       }
-    }
 
-    //закрытие окна по клику на оверлей
-    const onLeftClickModal = (evt) => {
-      if (evt.target === loginModal) {
-        loginModal.classList.remove('login-window--opened');
-        body.classList.remove('body--disabled-scroll');
-        loginModal.removeEventListener('click', onLeftClickModal);
+      //закрытие окна по клику на оверлей
+      const onLeftClickModal = (evt) => {
+        if (evt.target === loginModal) {
+          loginModal.classList.remove('login-window--opened');
+          body.classList.remove('body--disabled-scroll');
+          loginModal.removeEventListener('click', onLeftClickModal);
+          loginModal.removeEventListener('keydown', focusTrap);
+          menuButton.focus();
+        }
       }
-    }
 
-    const loginModalHandler = () => {
-      const modalOpened = loginModal.classList.contains('login-window--opened');
-      loginModal.classList.toggle('login-window--opened', !modalOpened);
-      body.classList.toggle('body--disabled-scroll', !modalOpened);
-      if (!modalOpened) {
-        header.classList.add('header--closed');
-        header.classList.remove('header--opened');
-        document.addEventListener('keydown', onEscClickModal);
-        loginModal.addEventListener('click', onLeftClickModal);
-        clearForm(loginForm);
-      }
-    }
+      const focusTrap = (evt) => {
+        const focusableElts = loginModal.querySelectorAll('a, input, button');
 
-    const loginModalListener = () => {
-      loginLinksArr.forEach(button => {
-        button.addEventListener('click', evt => {
+        if (evt.key === 'Tab' && evt.shiftKey) {
           evt.preventDefault();
+          const currentEltIndex = Array.from(focusableElts).indexOf(document.activeElement);
+          if (currentEltIndex !== 0) {
+            focusableElts[currentEltIndex - 1].focus();
+          } else {
+            focusableElts[focusableElts.length - 1].focus();
+          }
+          return
+        }
+
+        if (evt.key === 'Tab') {
+          evt.preventDefault();
+          const currentEltIndex = Array.from(focusableElts).indexOf(document.activeElement);
+          if (currentEltIndex !== focusableElts.length - 1) {
+            focusableElts[currentEltIndex + 1].focus();
+          } else {
+            focusableElts[0].focus();
+          }
+        }
+      }
+
+      const loginModalHandler = () => {
+        const modalOpened = loginModal.classList.contains('login-window--opened');
+        loginModal.classList.toggle('login-window--opened', !modalOpened);
+        body.classList.toggle('body--disabled-scroll', !modalOpened);
+        if (!modalOpened) {
+          emailInput.focus();
+          header.classList.add('header--closed');
+          header.classList.remove('header--opened');
+          document.addEventListener('keydown', onEscClickModal);
+          loginModal.addEventListener('click', onLeftClickModal);
+          loginModal.addEventListener('keydown', focusTrap);
+          clearForm(loginForm);
+        }
+      }
+
+      const loginModalListener = () => {
+        loginLinksArr.forEach(button => {
           onClickSpaceEnter(button);
-          loginModalHandler();
-        })
-      });
+          button.addEventListener('click', evt => {
+            evt.preventDefault();
+            loginModalHandler();
+          })
+        });
 
-      closeModalBtn.addEventListener('click', evt => {
-        evt.preventDefault();
         onClickSpaceEnter(closeModalBtn);
-        loginModalHandler();
-      })
-    }
+        closeModalBtn.addEventListener('click', evt => {
+          evt.preventDefault();
+          loginModalHandler();
+          loginModal.removeEventListener('keydown', focusTrap);
+          menuButton.focus();
+        })
+      }
 
-    loginModalListener();
+      loginModalListener();
+    }
   }
+
+
 
   //Очистка поисковой строки при сабмите
   if (document.querySelector('.header__search-form')) {
@@ -352,22 +387,30 @@ if (document.querySelector('.catalog-filter')) {
   const catalogFilter = catalogFilterForm.querySelectorAll('.catalog-filter__filter-item input');
 
   //Работа аккордеона
-
-  catalogSectionsArr.forEach(section => {
-    section.addEventListener('click', evt => {
-      evt.preventDefault();
-      const filterSectionIsClosed = section.parentNode.classList.contains('catalog-filter__section--closed');
-      section.parentNode.classList.toggle('catalog-filter__section--closed', !filterSectionIsClosed);
-    })
-  });
+  const filterSectionHandler = () => {
+    catalogSectionsArr.forEach(section => {
+      onClickSpaceEnter(section);
+      section.addEventListener('click', evt => {
+        evt.preventDefault();
+        const filterSectionIsClosed = section.parentNode.classList.contains('catalog-filter__section--closed');
+        section.parentNode.classList.toggle('catalog-filter__section--closed', !filterSectionIsClosed);
+      })
+    });
+  }
 
   //Сброс фильтров
-  filterClearBtn.addEventListener('click', evt => {
-    evt.preventDefault();
-    catalogFilter.forEach(filter => {
-      filter.checked = false;
+  const clearFilterHandler = () => {
+    onClickSpaceEnter(filterClearBtn);
+    filterClearBtn.addEventListener('click', evt => {
+      evt.preventDefault();
+      catalogFilter.forEach(filter => {
+        filter.checked = false;
+      });
     });
-  });
+  }
+
+  filterSectionHandler();
+  clearFilterHandler();
 
   //Появление фильтра в планшетной версии и мобильной
   if (document.body.clientWidth < 1024 && document.querySelector('.catalog-filter__button--show-filter')) {

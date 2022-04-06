@@ -18,7 +18,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  object-position: 50% 90%;
+  object-position: 50% 100%;
 }
 
 .product-card__picture--new-product img {
@@ -41,6 +41,22 @@
   }
 
   @media (max-width: $tabletMax) {
+    height: 460px;
+  }
+
+  @media (max-width: 950px) {
+    height: 430px;
+  }
+
+  @media (max-width: 850px) {
+    height: 400px;
+  }
+
+  @media (max-width: 800px) {
+    height: 370px;
+  }
+
+  @media (max-width: 780px) {
     height: 340px;
   }
 
